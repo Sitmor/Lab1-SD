@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package main;
+
+option go_package = "SD/LAB1/protocol";
+
+
+service KeyService {
+  // Send the ammount of keys
+  rpc SendKeys (CentralToRegionalAvailableKeysRequest) returns (CentralToRegionalAvailableKeysResponse) {}
+}
+
+message CentralToRegionalAvailableKeysRequest {
+  int32 ammount = 1;
+}
+
+message CentralToRegionalAvailableKeysResponse {
+  int32 code = 1;
+}
